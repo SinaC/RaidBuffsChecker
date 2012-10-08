@@ -28,6 +28,16 @@ UI.SetFontString = function(parent, fontHeight, fontStyle)
 	return fs
 end
 
+local function ConvertColor(color)
+	return { color.r, color.g, color.b, color.a or 1 }
+end
+
+UI.ClassColor = function(className)
+	local class = className or E.myclass
+	local color = RAID_CLASS_COLORS[E.myclass]
+	return ConvertColor(color)
+end
+
 UI.CreateMover = function(name, width, height, anchor, text)
 	local holder = CreateFrame("Frame", name.."HOLDER", UIParent)
 	holder:Size(width, height)

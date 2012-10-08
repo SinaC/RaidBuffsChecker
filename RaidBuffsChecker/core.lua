@@ -251,7 +251,7 @@ for i = 1, #RaidIndex do
 	-- small buttons
 	bigButton.SmallButtons = {}
 	local j = 1
-	for spellID in pairs(spellList) do
+	for spellID, className in pairs(spellList) do
 		if spellID ~= "default" and spellID ~= "name" then
 			local smallButton = CreateFrame("Frame", nil, bigButton)
 			smallButton:SetTemplate()
@@ -281,6 +281,8 @@ for i = 1, #RaidIndex do
 			smallButton.texture:Point("BOTTOMRIGHT", -2, 2)
 			smallButton.texture:SetTexture(spellIcon)
 			smallButton.texture:SetAlpha(0.2)
+			-- border
+			smallButton:SetBackdropBorderColor(unpack(UI.ClassColor(className)))
 
 			-- tooltip
 			smallButton:SetScript("OnEnter", SetTooltip)

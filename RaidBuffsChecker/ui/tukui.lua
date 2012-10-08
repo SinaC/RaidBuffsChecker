@@ -64,6 +64,10 @@ UI.SetFontString = function(parent, fontHeight, fontStyle)
 	return fs
 end
 
+UI.ClassColor = function(className)
+	return className and T.UnitColor.class[className] or T.UnitColor.class[T.myclass]
+end
+
 UI.CreateMover = function(name, width, height, anchor, text)
 	local mover = CreateFrame("Frame", name, UIParent)
 	mover:SetTemplate()

@@ -190,6 +190,11 @@ UI.SetFontString = function(parent, fontHeight, fontStyle)
 	return fs
 end
 
+UI.ClassColor = function(className)
+	local class = className or UI.MyClass
+	return { RAID_CLASS_COLORS[class].r, RAID_CLASS_COLORS[class].g, RAID_CLASS_COLORS[class].b}
+end
+
 local AllowFrameMoving = {}
 UI.CreateMover = function(name, width, height, anchor, text)
 	local mover = CreateFrame("Frame", name, UIParent)
