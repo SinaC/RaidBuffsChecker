@@ -16,7 +16,7 @@ local personalCount = 8 -- we're lucky CasterIndex and NonCasterIndex have the s
 local position = {"TOP", UIParent, "TOP", 0, -3}
 local buttonSpacing = 2
 local buttonSize = 20
-local frameSize = (buttonSize * personalCount) + buttonSpacing * (personalCount+1) -- spacing - button - spacing - button - ... - button - spacing
+local frameSize = (buttonSize * personalCount) + (buttonSpacing * (personalCount+1)) -- spacing - button - spacing - button - ... - button - spacing
 local smallButtonSize = 20
 local bigButtonSize = smallButtonSize * 2
 local bigButtonSpacing = 14
@@ -30,7 +30,7 @@ local CasterIndex = {
 	[5] = C.RaidBuffs.CriticalStrike,
 	[6] = C.RaidBuffs.Mastery,
 	[7] = C.RaidBuffs.Food,
-	[8] = C.RaidBuffs.Flask,
+	[8] = C.RaidBuffs.Flask, -- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
 }
 
 local NonCasterIndex = {
@@ -41,7 +41,7 @@ local NonCasterIndex = {
 	[5] = C.RaidBuffs.CriticalStrike,
 	[6] = C.RaidBuffs.Mastery,
 	[7] = C.RaidBuffs.Food,
-	[8] = C.RaidBuffs.Flask,
+	[8] = C.RaidBuffs.Flask, -- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
 }
 
 -- Raid bar
@@ -98,7 +98,7 @@ PersonalBuff:SetTemplate()
 PersonalBuff:Size(frameSize, buttonSize + 4)
 PersonalBuff:Point(unpack(position))
 PersonalBuff:SetFrameLevel(Minimap:GetFrameLevel() + 2)
--- Create 6 button frames
+-- Create button frames
 PersonalBuff.Buttons = {}
 for i = 1, personalCount do
 	local button = CreateFrame("Frame", nil, PersonalBuff)
@@ -350,10 +350,10 @@ RaidBuffToggle:Point("TOP", PersonalBuff, "BOTTOM", 0, -1)
 -- RaidBuffToggle.text = RaidBuffToggle:CreateFontString(nil, "OVERLAY")
 -- RaidBuffToggle.text:SetPoint("CENTER")
 -- RaidBuffToggle.text:SetFont(C.media.font, 12)
--- RaidBuffToggle.text:SetText(L.raidbuff_viewall)
+-- RaidBuffToggle.text:SetText(L.raidbuffschecker_viewall)
 RaidBuffToggle.text = UI.SetFontString(RaidBuffToggle, 12)
 RaidBuffToggle.text:SetPoint("CENTER")
-RaidBuffToggle.text:SetText(L.raidbuff_viewall)
+RaidBuffToggle.text:SetText(L.raidbuffschecker_viewall)
 
 local function ShowOnHover(activate)
 	if activate then
@@ -374,7 +374,7 @@ RaidBuffToggle:SetScript("OnMouseDown", function(self)
 		RaidBuff:Hide()
 		self:ClearAllPoints()
 		self:Point("TOP", PersonalBuff, "BOTTOM", 0, -1)
-		self.text:SetText(L.raidbuff_viewall)
+		self.text:SetText(L.raidbuffschecker_viewall)
 		ShowOnHover(true)
 		RaidBuff:SetScript("OnUpdate", nil)
 	else
@@ -382,7 +382,7 @@ RaidBuffToggle:SetScript("OnMouseDown", function(self)
 		RaidBuff:Show()
 		self:ClearAllPoints()
 		self:Point("BOTTOM", RaidBuff, "BOTTOM", 0, 5)
-		self.text:SetText(L.raidbuff_minimizeall)
+		self.text:SetText(L.raidbuffschecker_minimizeall)
 		ShowOnHover(false)
 		RaidBuff:SetScript("OnUpdate", RaidBuffUpdate)
 	end
@@ -393,6 +393,6 @@ ShowOnHover(true) -- Show on hover by default
 -----------------------------
 -- Mover
 -----------------------------
-local mover = UI.CreateMover(PersonalBuff:GetName().."_MOVER", PersonalBuff:GetWidth(), PersonalBuff:GetHeight(), position, L.raidbuff_move)
+local mover = UI.CreateMover(PersonalBuff:GetName().."_MOVER", PersonalBuff:GetWidth(), PersonalBuff:GetHeight(), position, L.raidbuffschecker_move)
 PersonalBuff:ClearAllPoints()
-PersonalBuff:Point(unpack({ "TOPLEFT", mover, 0, 0 }))
+PersonalBuff:Point("TOPLEFT", mover, 0, 0)

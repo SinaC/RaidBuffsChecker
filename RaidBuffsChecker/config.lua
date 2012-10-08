@@ -13,7 +13,7 @@ C.RaidBuffs = {
 		[90363] = "HUNTER",			-- Embrace of the Shale Spider
 		[117667] = "MONK",			-- Legacy of The Emperor
 		["default"] = 20217,
-		["name"] = L.raidbuff_stats
+		["name"] = L.raidbuffschecker_stats
 	},
 	["Stamina"] = {
 		[469] = "WARRIOR",			-- Commanding Shout
@@ -21,14 +21,14 @@ C.RaidBuffs = {
 		[21562] = "PRIEST",			-- Power Word: Fortitude
 		[90364] = "HUNTER",			-- Qiraji Fortitude
 		["default"] = 21562,
-		["name"] = L.raidbuff_stamina
+		["name"] = L.raidbuffschecker_stamina
 	},
 	["AttackPower"] = {
 		[6673] = "WARRIOR",			-- Battle Shout
 		[19506] = "HUNTER",			-- Trueshot Aura
 		[57330] = "DEATHKNIGHT",	-- Horn of Winter
 		["default"] = 57330,
-		["name"] = L.raidbuff_attackpower
+		["name"] = L.raidbuffschecker_attackpower
 	},
 	["SpellPower"] = {
 		[1459] = "MAGE",			-- Arcane Brilliance
@@ -37,7 +37,7 @@ C.RaidBuffs = {
 		[109773] = "WARLOCK",		-- Dark Intent
 		[126309] = "HUNTER",		-- Still Water
 		["default"] = 1459,
-		["name"] = L.raidbuff_spellpower
+		["name"] = L.raidbuffschecker_spellpower
 	},
 	["AttackSpeed"] = {
 		[30809] = "SHAMAN",			-- Unleashed Rage
@@ -46,7 +46,7 @@ C.RaidBuffs = {
 		[128432] = "HUNTER",		-- Cackling Howl
 		[128433] = "HUNTER",		-- Serpent"s Swiftness
 		["default"] = 55610,
-		["name"] = L.raidbuff_attackspeed
+		["name"] = L.raidbuffschecker_attackspeed
 	},
 	["SpellHaste"] = {
 		[15473] = "PRIEST",			-- Shadowform
@@ -54,7 +54,7 @@ C.RaidBuffs = {
 		[49868] = "PRIEST",			-- Mind Quickening
 		[51470] = "SHAMAN",			-- Elemental Oath
 		["default"] = 49868,
-		["name"] = L.raidbuff_spellhaste
+		["name"] = L.raidbuffschecker_spellhaste
 	},
 	["CriticalStrike"] = {
 		[1459] = "MAGE",			-- Arcane Brilliance
@@ -67,7 +67,7 @@ C.RaidBuffs = {
 		[126309] = "HUNTER",		-- Still Water
 		[126373] = "HUNTER",		-- Fearless Roar
 		["default"] = 116781,
-		["name"] = L.raidbuff_criticalstrike
+		["name"] = L.raidbuffschecker_criticalstrike
 	},
 	["Mastery"] = {
 		[19740] = "PALADIN",		-- Blessing of Might
@@ -75,7 +75,7 @@ C.RaidBuffs = {
 		[128997] = "HUNTER",		-- Spirit Beast Blessing
 		[116956] = "SHAMAN",		-- Grace of Air -- NOT DISPLAYED
 		["default"] = 19740,
-		["name"] = L.raidbuff_mastery
+		["name"] = L.raidbuffschecker_mastery
 	},
 	-- http://www.wowhead.com/items=0.3
 	["Flask"] = {
@@ -86,20 +86,20 @@ C.RaidBuffs = {
 		[105694] = "1500 STA",		-- Flask of the Earth (76087)
 		[105617] = "3420 STAT",		-- Alchemist's Flask (75525) Agility, Strength, or Intellect
 		["default"] = 105617,
-		["name"] = L.raidbuff_flask
+		["name"] = L.raidbuffschecker_flask
 	},
 	-- http://www.wowhead.com/items=0.2
 	["Elixir"] = {
-		[105681] = "2250 AC",		-- Mantid Elixir (76075)
-		[105682] = "750 CRIT",		-- Mad Hozen Elixir (76076)
-		[105683] = "750 EXP",		-- Elixir of Weaponry (76077)
-		[105684] = "750 HASTE",		-- Elixir of the Rapids (76078)
-		[105685] = "750 SPI",		-- Elixir of Peace (76079)
-		[105686] = "750 HIT",		-- Elixir of Perfection (76080)
-		[105687] = "750 DODGE",		-- Elixir of Mirrors (76081)
-		[105688] = "750 MAST",		-- Monk's Elixir (76083)
+		[105681] = "2250 AC",		-- Mantid Elixir (76075)  Guardian
+		[105682] = "750 CRIT",		-- Mad Hozen Elixir (76076)  Battle
+		[105683] = "750 EXP",		-- Elixir of Weaponry (76077)  Battle
+		[105684] = "750 HASTE",		-- Elixir of the Rapids (76078)  Battle
+		[105685] = "750 SPI",		-- Elixir of Peace (76079)  Battle
+		[105686] = "750 HIT",		-- Elixir of Perfection (76080)  Battle
+		[105687] = "750 DODGE",		-- Elixir of Mirrors (76081)  Guardian
+		[105688] = "750 MAST",		-- Monk's Elixir (76083)  Battle
 		["default"] = 105681,
-		["name"] = L.raidbuff_elixir
+		["name"] = L.raidbuffschecker_elixir
 	},
 	-- http://www.wowhead.com/items=0.5
 	["Food"] = {

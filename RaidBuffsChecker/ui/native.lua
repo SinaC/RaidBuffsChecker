@@ -266,7 +266,7 @@ end
 local function SlashHandlerMove(args)
 	Move()
 	if not enable then
-		print(string.format(L.classmonitor_command_stopmoving, SLASH_RAIDBUFFSCHECKER1))
+		print(string.format(L.raidbuffschecker_command_stopmoving, SLASH_RAIDBUFFSCHECKER1))
 	end
 end
 

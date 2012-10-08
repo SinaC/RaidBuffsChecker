@@ -1,5 +1,5 @@
 ## Interface: 50001
-## Version: 1.0.1
+## Version: 1.0.2
 ## Author: SinaC
 ## Credits: Elv, Tukz
 ## Title: |cFF148587Raid Buff|r Checker
