@@ -1,7 +1,7 @@
 ## Interface: 50001
 ## Version: 1.0.2
 ## Author: SinaC
-## Credits: Elv, Tukz
+## Credits: Elv, Tukz, Epicgrim
 ## Title: |cFF148587Raid Buff|r Checker
 ## Notes: Raid buff checker compatible with Blizzard UI, Tukui and ElvUI
 ## URL: https://github.com/SinaC/RaidBuffChecker
