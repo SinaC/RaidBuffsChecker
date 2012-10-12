@@ -282,7 +282,10 @@ for i = 1, #RaidIndex do
 			smallButton.texture:SetTexture(spellIcon)
 			smallButton.texture:SetAlpha(0.2)
 			-- border
-			smallButton:SetBackdropBorderColor(unpack(UI.ClassColor(className)))
+			if className then
+print("ClassName:"..tostring(className))
+				smallButton:SetBackdropBorderColor(unpack(UI.ClassColor(className)))
+			end
 
 			-- tooltip
 			smallButton:SetScript("OnEnter", SetTooltip)
