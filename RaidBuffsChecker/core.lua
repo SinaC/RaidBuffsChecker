@@ -283,7 +283,6 @@ for i = 1, #RaidIndex do
 			smallButton.texture:SetAlpha(0.2)
 			-- border
 			if className then
-print("ClassName:"..tostring(className))
 				smallButton:SetBackdropBorderColor(unpack(UI.ClassColor(className)))
 			end
 
