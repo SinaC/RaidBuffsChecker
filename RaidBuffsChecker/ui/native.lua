@@ -219,7 +219,7 @@ end
 
 local enable = true
 local origa1, origf, origa2, origx, origy
-local function Move()
+UI.Move = function()
 	for i = 1, getn(AllowFrameMoving) do
 		if AllowFrameMoving[i] then
 			if enable then
@@ -253,29 +253,4 @@ local function Move()
 		end
 	end
 	enable = not enable
-end
-
-SLASH_RAIDBUFFSCHECKER1 = "/rbc"
-SLASH_RAIDBUFFSCHECKER2 = "/raidbuffschecker"
-
-local function SlashHandlerShowHelp()
-	print(string.format(L.raidbuffschecker_help_use, SLASH_RAIDBUFFSCHECKER1, SLASH_RAIDBUFFSCHECKER2))
-	print(string.format(L.raidbuffschecker_help_move, SLASH_CLASSMONITOR1))
-end
-
-local function SlashHandlerMove(args)
-	Move()
-	if not enable then
-		print(string.format(L.raidbuffschecker_command_stopmoving, SLASH_RAIDBUFFSCHECKER1))
-	end
-end
-
-SlashCmdList["RAIDBUFFSCHECKER"] = function(cmd)
-	local switch = cmd:match("([^ ]+)")
-	local args = cmd:match("[^ ]+ (.+)")
-	if switch == "move" then
-		SlashHandlerMove(args)
-	else
-		SlashHandlerShowHelp()
-	end
 end

@@ -88,3 +88,14 @@ UI.CreateMover = function(name, width, height, anchor, text)
 
 	return mover
 end
+
+UI.Move = function()
+	if SlashCmdList["MOVING"] then
+		SlashCmdList["MOVING"]()
+	end
+	-- T.MoveUIElements()
+	-- if T.MoveUnitFrames then
+		-- T.MoveUnitFrames()
+	-- end
+	return true
+end

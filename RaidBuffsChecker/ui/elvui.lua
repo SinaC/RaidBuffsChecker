@@ -48,3 +48,8 @@ UI.CreateMover = function(name, width, height, anchor, text)
 	--return holder
 	return E.CreatedMovers[name].mover -- we need the mover for multiple anchors
 end
+
+UI.Move = function()
+	E:ToggleConfigMode() -- Call MoveUI from ElvUI
+	return true
+end

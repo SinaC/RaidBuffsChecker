@@ -3,6 +3,7 @@
 
 	<Script file="locales\english.lua"/>
 	<Script file="locales\french.lua"/>
+	<Script file="locales\chinese.lua"/>
 
 	<Script file="ui\common.lua"/>
 	<Script file="ui\tukui.lua"/>
@@ -13,5 +14,6 @@
 
 	<Script file="functions.lua"/>
 
+	<Script file="commands.lua"/>
 	<Script file="core.lua"/>
 </Ui>

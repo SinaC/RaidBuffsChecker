@@ -17,10 +17,11 @@ if GetLocale() == "frFR" then
 
 	L.raidbuffschecker_viewall = "Afficher les am\195\169liorations de raid"
 	L.raidbuffschecker_minimizeall = "Minimiser les am\195\169liorations de raid"
-	L.raidbuffschecker_move = "Bouger am\195\169liorations de raid"
+	L.raidbuffschecker_move = "Bouger les am\195\169liorations de raid"
 
-	L.raidbuffschecker_help_use = "Utilisez %s or %s pour configurer ClassMonitor"
-	L.raidbuffschecker_help_move = "%s move - bouger les fen\195\170tres de ClassMonitor"
+	L.raidbuffschecker_help_use = "Utilisez %s or %s pour configurer RaidBuffsChecker"
+	L.raidbuffschecker_help_move = "%s move - bouger les fen\195\170tres de RaidBuffsChecker"
+	L.raidbuffschecker_help_layout = "%s layout - passer d'une disposition horizontale \195\160 une disposition vertical et vice-versa"
 	L.raidbuffschecker_command_stopmoving = "Utilisez %s move \195\160 nouveau pour arr\195\170ter de bouger les fen\195\170tres"
 
 end
