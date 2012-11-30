@@ -14,8 +14,8 @@ L.raidbuffschecker_flask = "Flask"
 L.raidbuffschecker_elixir = "Elixir"
 L.raidbuffschecker_foodanddrink = "Food & drinks"
 
-L.raidbuffschecker_viewall = "View all raid buffs"
-L.raidbuffschecker_minimizeall = "Minimize all raid buffs"
+L.raidbuffschecker_viewall = "View all"
+L.raidbuffschecker_minimizeall = "Minimize"
 L.raidbuffschecker_move = "Move raid buffs"
 
 L.raidbuffschecker_help_use = "Use %s or %s to configure RaidBuffsChecker"

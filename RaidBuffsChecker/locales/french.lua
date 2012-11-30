@@ -15,8 +15,8 @@ if GetLocale() == "frFR" then
 	L.raidbuffschecker_elixir = "Elixir"
 	L.raidbuffschecker_foodanddrink = "Nourriture & boisson"
 
-	L.raidbuffschecker_viewall = "Afficher les am\195\169liorations de raid"
-	L.raidbuffschecker_minimizeall = "Minimiser les am\195\169liorations de raid"
+	L.raidbuffschecker_viewall = "Afficher"
+	L.raidbuffschecker_minimizeall = "Minimiser"
 	L.raidbuffschecker_move = "Bouger les am\195\169liorations de raid"
 
 	L.raidbuffschecker_help_use = "Utilisez %s or %s pour configurer RaidBuffsChecker"
