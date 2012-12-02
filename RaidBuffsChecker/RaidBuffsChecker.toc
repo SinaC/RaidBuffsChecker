@@ -1,5 +1,5 @@
 ## Interface: 50100
-## Version: 2.0
+## Version: 2.1
 ## Author: SinaC
 ## Credits: Elv, Tukz, Epicgrim, Puffina
 ## Title: |cFF148587Raid Buff|r Checker

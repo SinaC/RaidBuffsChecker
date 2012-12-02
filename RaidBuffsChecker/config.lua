@@ -53,6 +53,7 @@ C.RaidBuffs = {
 		[24907] = "DRUID",			-- Moonkin Aura
 		[49868] = "PRIEST",			-- Mind Quickening
 		[51470] = "SHAMAN",			-- Elemental Oath
+		[135678] = "HUNTER",		-- Energizing Spores
 		["default"] = 49868,
 		["name"] = L.raidbuffschecker_spellhaste
 	},
