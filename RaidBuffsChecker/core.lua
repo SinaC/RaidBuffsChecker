@@ -112,6 +112,7 @@ end)
 -----------------------------
 local function CreatePersonalBuffFrame(layout)
 	PersonalBuff = CreateFrame("Frame", "RaidBuffsCheckerPersonalFrame", UI.PetBattleHider)
+	PersonalBuff:SetClampedToScreen(true)
 	PersonalBuff:SetTemplate()
 	if layout == "HORIZONTAL" then
 		PersonalBuff:Size(frameSize, buttonSize + 4)
@@ -213,6 +214,7 @@ end
 --   -------- -------- -------- -------- --------      -------- -------- -------- -------- -------- --------
 local function CreateRaidBuffFrame(layout)
 	RaidBuff = CreateFrame("Frame", "RaidBuffsCheckerFrame", PersonalBuff)
+	RaidBuff:SetClampedToScreen(true)
 	RaidBuff:SetTemplate()
 	if layout == "HORIZONTAL" then
 		RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
