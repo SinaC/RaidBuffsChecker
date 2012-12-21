@@ -12,3 +12,10 @@ Engine.GetRole = function()
 	end
 	return "Melee"
 end
+
+Engine.DebugPrint = function(...)
+	if RaidBuffsChecker.DebugMode == true then
+		local line = "RBC DEBUG:" .. strjoin(" ", ...)
+		print(line)
+	end
+end

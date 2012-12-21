@@ -32,6 +32,8 @@ SlashCmdList["RAIDBUFFSCHECKER"] = function(cmd)
 		SlashHandlerMove(args)
 	elseif switch == "layout" then
 		SlashHandlerLayout(args)
+	elseif switch == "debug" then
+		RaidBuffsChecker.DebugMode = (RaidBuffsChecker.DebugMode ~= true) and true or false
 	else
 		SlashHandlerShowHelp()
 	end

@@ -479,6 +479,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	-- Saved variables defaulting
 	RaidBuffsChecker = RaidBuffsChecker or {}
 	RaidBuffsChecker.Layout = RaidBuffsChecker.Layout or "HORIZONTAL"
+	RaidBuffsChecker.DebugMode = (RaidBuffsChecker.DebugMode ~= nil) and RaidBuffsChecker.DebugMode or false
 	-- Create frames
 	CreatePersonalBuffFrame(RaidBuffsChecker.Layout)
 	CreateRaidBuffFrame(RaidBuffsChecker.Layout)

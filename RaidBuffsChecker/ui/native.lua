@@ -197,6 +197,7 @@ end
 
 local AllowFrameMoving = {}
 UI.CreateMover = function(name, width, height, anchor, text)
+Engine.DebugPrint("UI.CreateMover")
 	local mover = CreateFrame("Frame", name, UIParent)
 	mover:SetTemplate()
 	mover:SetBackdropBorderColor(1, 0, 0, 1)
@@ -213,16 +214,20 @@ UI.CreateMover = function(name, width, height, anchor, text)
 	mover:Hide()
 
 	tinsert(AllowFrameMoving, mover)
-
+Engine.DebugPrint("UI.CreateMover: succeeded")
 	return mover
 end
 
 local enable = true
 local origa1, origf, origa2, origx, origy
 UI.Move = function()
+Engine.DebugPrint("UI.Move")
 	for i = 1, getn(AllowFrameMoving) do
+Engine.DebugPrint("UI.Move i:"..tostring(i))
 		if AllowFrameMoving[i] then
+Engine.DebugPrint("UI.Move allowed  "..tostring(AllowFrameMoving[i].text))
 			if enable then
+Engine.DebugPrint("UI.Move enabled")
 				AllowFrameMoving[i]:EnableMouse(true)
 				AllowFrameMoving[i]:RegisterForDrag("LeftButton", "RightButton")
 				AllowFrameMoving[i]:SetScript("OnDragStart", function(self) 
@@ -239,8 +244,10 @@ UI.Move = function()
 					AllowFrameMoving[i].text:Show() 
 				end
 			else
+Engine.DebugPrint("UI.Move not enabled")
 				AllowFrameMoving[i]:EnableMouse(false)
 				if AllowFrameMoving[i].moving == true then
+Engine.DebugPrint("UI.Move moving == true")
 					AllowFrameMoving[i]:StopMovingOrSizing()
 					AllowFrameMoving[i]:ClearAllPoints()
 					AllowFrameMoving[i]:SetPoint(origa1, origf, origa2, origx, origy)
@@ -253,4 +260,5 @@ UI.Move = function()
 		end
 	end
 	enable = not enable
+	return enable
 end
