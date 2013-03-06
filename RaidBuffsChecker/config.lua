@@ -17,9 +17,10 @@ C.RaidBuffs = {
 	},
 	["Stamina"] = {
 		[469] = "WARRIOR",			-- Commanding Shout
-		[6307] = "WARLOCK",			-- Imp. Blood Pact
+		--[6307] = "WARLOCK",			-- Imp. Blood Pact
 		[21562] = "PRIEST",			-- Power Word: Fortitude
 		[90364] = "HUNTER",			-- Qiraji Fortitude
+		[109773] = "WARLOCK",		-- Dark Intent
 		["default"] = 21562,
 		["name"] = L.raidbuffschecker_stamina
 	},
