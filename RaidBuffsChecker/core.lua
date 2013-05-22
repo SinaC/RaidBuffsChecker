@@ -388,7 +388,9 @@ end
 local function ShowOnHover(activate)
 	if activate then
 		RaidBuffToggle:SetScript("OnEnter", function(self)
-			self:SetAlpha(1)
+			if C.NoToggleInCombat ~= true or not InCombatLockdown() then
+				self:SetAlpha(1)
+			end
 		end)
 		RaidBuffToggle:SetScript("OnLeave", function(self)
 			self:SetAlpha(0)

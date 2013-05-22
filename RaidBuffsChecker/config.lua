@@ -4,6 +4,7 @@ local L = Engine.Locales
 local C = Engine.Config
 
 C.InstanceOnly = false
+C.NoToggleInCombat = true
 
 C.RaidBuffs = {
 	-- http://www.wowhead.com/guide=1100
