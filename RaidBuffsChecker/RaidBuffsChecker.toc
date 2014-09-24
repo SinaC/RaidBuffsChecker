@@ -1,5 +1,5 @@
-## Interface: 50300
-## Version: 2.4
+## Interface: 50400
+## Version: 2.5
 ## Author: SinaC
 ## Credits: Elv, Tukz, Epicgrim, Puffina
 ## Title: |cFF148587Raid Buff|r Checker
