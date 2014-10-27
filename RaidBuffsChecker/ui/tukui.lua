@@ -53,11 +53,11 @@ Config.ClassRole = { -- Ripped from ElvUI
 
 --
 UI.PetBattleHider = TukuiPetBattleHider
-UI.MyClass = T.myclass
+UI.MyClass = T.MyClass
 
 UI.SetFontString = function(parent, fontHeight, fontStyle)
 	local fs = parent:CreateFontString(nil, "OVERLAY")
-	fs:SetFont(C["media"]["uffont"], fontHeight, fontStyle)
+	fs:SetFont(C.Medias.Font, fontHeight, fontStyle)
 	fs:SetJustifyH("LEFT")
 	fs:SetShadowColor(0, 0, 0)
 	fs:SetShadowOffset(1.25, -1.25)
@@ -65,7 +65,7 @@ UI.SetFontString = function(parent, fontHeight, fontStyle)
 end
 
 UI.ClassColor = function(className)
-	return className and T.UnitColor.class[className] or T.UnitColor.class[T.myclass]
+	return className and T.Colors.class[className] or T.Colors.class[T.MyClass]
 end
 
 UI.CreateMover = function(name, width, height, anchor, text)
@@ -77,14 +77,16 @@ UI.CreateMover = function(name, width, height, anchor, text)
 	mover:Size(width, height)
 	mover:Point(unpack(anchor))
 
-	mover.text = T.SetFontString(mover, C["media"]["uffont"], 12)
+	mover.text = T.SetFontString(mover, C.Medias.Font, 12)
 	mover.text:SetPoint("CENTER")
 	mover.text:SetText(text)
 	mover.text.Show = function() mover:Show() end
 	mover.text.Hide = function() mover:Hide() end
 	mover:Hide()
 
-	tinsert(T.AllowFrameMoving, mover)
+	--tinsert(T.AllowFrameMoving, mover)
+	local movers = T["Movers"]
+	movers:RegisterFrame(mover)
 
 	return mover
 end

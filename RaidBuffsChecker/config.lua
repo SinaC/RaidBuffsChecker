@@ -9,19 +9,25 @@ C.NoToggleInCombat = true
 C.RaidBuffs = {
 	-- http://www.wowhead.com/guide=1100
 	["Stats"] = {
-		[1126] = "DRUID",			-- Mark of The Wild
+		[1126] = "DRUID",			-- Mark of the Wild
 		[20217] = "PALADIN",		-- Blessing Of Kings
-		[90363] = "HUNTER",			-- Embrace of the Shale Spider
-		[117667] = "MONK",			-- Legacy of The Emperor
+		[90363] = "HUNTER",			-- Shale Spider - Embrace of the Shale Spider
+		[115921] = "MONK",			-- Legacy of the Emperor
+		[116781] = "MONK",			-- Legacy of the White Tiger
+		[159988] = "HUNTER",		-- Dog - Bark of the Wild
+		[160017] = "HUNTER",		-- Gorilla - Blessing of Kongs
+		[160077] = "HUNTER",		-- Worm - Strength of the Earth
 		["default"] = 20217,
 		["name"] = L.raidbuffschecker_stats
 	},
 	["Stamina"] = {
 		[469] = "WARRIOR",			-- Commanding Shout
-		--[6307] = "WARLOCK",			-- Imp. Blood Pact
-		[21562] = "PRIEST",			-- Power Word: Fortitude
-		[90364] = "HUNTER",			-- Qiraji Fortitude
-		[109773] = "WARLOCK",		-- Dark Intent
+		[21562] = "PRIEST",			-- Power Word:  Fortitude
+		[50256] = "HUNTER",			-- Bear - Invigorating Roar
+		[90364] = "HUNTER",			-- Silithid - Qiraji Fortitude
+		[160003] = "HUNTER",		-- Rylak - Savage Vigor
+		[160014] = "HUNTER",		-- Goat - Sturdiness
+		[166928] = "WARLOCK",		-- Blood Pact
 		["default"] = 21562,
 		["name"] = L.raidbuffschecker_stamina
 	},
@@ -35,494 +41,261 @@ C.RaidBuffs = {
 	["SpellPower"] = {
 		[1459] = "MAGE",			-- Arcane Brilliance
 		[61316] = "MAGE",			-- Dalaran Brilliance
-		[77747] = "SHAMAN",			-- Burning Wrath -- NOT DISPLAYED
+		[90364] = "HUNTER",			-- Silithid - Qiraji Fortitude
 		[109773] = "WARLOCK",		-- Dark Intent
-		[126309] = "HUNTER",		-- Still Water
+		[126309] = "HUNTER",		-- Waterstrider - Still Water
+		[128433] = "HUNTER",		-- Serpent - Serpent's Cunning
 		["default"] = 1459,
 		["name"] = L.raidbuffschecker_spellpower
 	},
-	["AttackSpeed"] = {
-		[30809] = "SHAMAN",			-- Unleashed Rage
-		[55610] = "DEATHKNIGHT",	-- Unholy aura
-		[113742] = "ROGUE",			-- Swiftblade"s Cunning
-		[128432] = "HUNTER",		-- Cackling Howl
-		[128433] = "HUNTER",		-- Serpent"s Swiftness
-		["default"] = 55610,
-		["name"] = L.raidbuffschecker_attackspeed
-	},
-	["SpellHaste"] = {
-		[15473] = "PRIEST",			-- Shadowform
-		[24907] = "DRUID",			-- Moonkin Aura
+	["Haste"] = {
+		[55610] = "DEATHKNIGHT",	-- Unholy Aura
 		[49868] = "PRIEST",			-- Mind Quickening
-		[51470] = "SHAMAN",			-- Elemental Oath
-		[135678] = "HUNTER",		-- Energizing Spores
-		["default"] = 49868,
-		["name"] = L.raidbuffschecker_spellhaste
+		[116956] = "SHAMAN",		-- Grace of Air
+		[128432] = "HUNTER",		-- Hyena - Cackling Howl
+		[160003] = "HUNTER",		-- Rylak - Savage Vigor
+		[113742] = "ROGUE",			-- Swiftblade's Cunning
+		[135678] = "HUNTER",		-- Sporebat - Energizing Spores
+		[160074] = "HUNTER",		-- Wasp - Speed of the Swarm
+		["default"] = 55610,
+		["name"] = L.raidbuffschecker_haste
 	},
 	["CriticalStrike"] = {
 		[1459] = "MAGE",			-- Arcane Brilliance
-		[24932] = "DRUID",			-- Leader of The Pact
-		[24604] = "HUNTER",			-- Furious Howl
+		[24932] = "DRUID",			-- Leader of the Pack
+		[24604] = "HUNTER",			-- Wolf - Furious Howl
 		[61316] = "MAGE",			-- Dalaran Brilliance
-		[90309] = "HUNTER",			-- Terrifying Roar
-		[97229] = "HUNTER",			-- Bellowing Roar
+		[90309] = "HUNTER",			-- Devilsaur - Terrifying Roar
+		[90363] = "HUNTER",			-- Shale Spider - Embrace of the Shale Spider
 		[116781] = "MONK",			-- Legacy of the White Tiger
-		[126309] = "HUNTER",		-- Still Water
-		[126373] = "HUNTER",		-- Fearless Roar
+		[126309] = "HUNTER",		-- Waterstrider - Still Water
+		[126373] = "HUNTER",		-- Quilen - Fearless Roar
+		[160052] = "HUNTER",		-- Raptor - Strength of the Pack
 		["default"] = 116781,
 		["name"] = L.raidbuffschecker_criticalstrike
 	},
 	["Mastery"] = {
 		[19740] = "PALADIN",		-- Blessing of Might
-		[93435] = "HUNTER",			-- Roar of Courage
-		[128997] = "HUNTER",		-- Spirit Beast Blessing
-		[116956] = "SHAMAN",		-- Grace of Air -- NOT DISPLAYED
+		[24907] = "DRUID",			-- Moonkin Aura
+		[93435] = "HUNTER",			-- Cat - Roar of Courage
+		[128997] = "HUNTER",		-- Spirit Beast - Spirit Beast Blessing
+		[116956] = "SHAMAN",		-- Grace of Air
+		[155522] = "DEATHKNIGHT",	-- Power of the Grave
+		[160039] = "HUNTER",		-- Hydra - Keen Senses
+		[160073] = "HUNTER",		-- Tallstrider - Plainswalking
 		["default"] = 19740,
 		["name"] = L.raidbuffschecker_mastery
 	},
+	["BurstHaste"] = {
+		[2825] = "SHAMAN",			-- Bloodlust
+		[32182] = "SHAMAN",			-- Heroism
+		[80353] = "MAGE",			-- Time Warp
+		[90355] = "HUNTER",			-- Ancient Hysteria
+		[160452] = "HUNTER",		-- Nether Ray - Netherwinds
+		["default"] = 80353,
+		["name"] = L.raidbuffschecker_bursthaste
+	},
+	["Multistrike"] = {
+		[24844] = "HUNTER",			-- Wind Serpent - Breath of the Winds
+		[34889] = "HUNTER",			-- Dragonhawk - Spry Attacks
+		[49868] = "PRIEST",			-- Mind Quickening
+		[50519] = "HUNTER",			-- Bat - Sonic Focus
+		[57386] = "HUNTER",			-- Clefthoof - Wild Strength
+		[58604] = "HUNTER",			-- Core Hound - Double Bite
+		[109773] = "WARLOCK",		-- Dark Intent
+		[113742] = "ROGUE",			-- Swiftblade's Cunning
+		[166916] = "MONK",			-- Windflurry
+		["default"] = 166916,
+		["name"] = L.raidbuffschecker_multistrike
+	},
+	["Versatility"] = {
+		[1126] = "DRUID",			-- Mark of the Wild
+		[35290] = "HUNTER",			-- Boar - Indomitable
+		[50518] = "HUNTER",			-- Ravager - Chitinous Armor
+		[55610] = "DEATHKNIGHT",	-- Unholy Aura
+		[57386] = "HUNTER",			-- Clefthoof - Wild Strength
+		[159735] = "HUNTER",		-- Bird of Prey - Tenacity
+		[160045] = "HUNTER",		-- Porcupine - Defensive Quills
+		[160077] = "HUNTER",		-- Worm - Strength of the Earth
+		[167187] = "PALADIN",		-- Sanctity Aura
+		[167188] = "WARRIOR",		-- Inspiring Presence
+		[173035] = "HUNTER",		-- Stag - Grace
+		["default"] = 167187,
+		["name"] = L.raidbuffschecker_versatility
+	},
 	-- http://www.wowhead.com/items=0.3
 	["Flask"] = {
-		[105696] = "1000 STR",		-- Flask of Winter's Bite (76088)
-		[105689] = "1000 AGI",		-- Flask of Spring Blossoms (76084)
-		[105691] = "1000 INT",		-- Flask of the Warm Sun (76085)
-		[105693] = "1000 SPI",		-- Flask of Falling Leaves (76086)
-		[105694] = "1500 STA",		-- Flask of the Earth (76087)
-		[105617] = "3420 STAT",		-- Alchemist's Flask (75525) Agility, Strength, or Intellect
+		-- Level 90
+		[105617] = "20 STAT",		-- Alchemist's Flask (75525) Agility, Strength, or Intellect
+		[105689] = "114 AGI",		-- Flask of Spring Blossoms (76084)
+		[105691] = "114 INT",		-- Flask of the Warm Sun (76085)
+		[105693] = "114 SPI",		-- Flask of Falling Leaves (76086)
+		[105694] = "171 STA",		-- Flask of the Earth (76087)
+		[105696] = "114 STR",		-- Flask of Winter's Bite (76088)
+		[127230] = "57 STAT",		-- Crystal of Insanity (86569)
+		-- Level 100
+		[109155] = "250 INT",		-- Greater Draenic Intellect Flask (109155)
+		[156070] = "200 INT",		-- Draenic Intellect Flask (109147)
+		[156064] = "250 AGI",		-- Greater Draenic Agility Flask (109153)
+		[156071] = "200 STR",		-- Draenic Strength Flask (109148)
+		[156073] = "200 AGI",		-- Draenic Agility Flask (109145)
+		[156077] = "300 STA",		-- Draenic Stamina Flask (109152)
+		[156080] = "250 STR",		-- Greater Draenic Strength Flask (109156)
+		[156084] = "375 STA",		-- Greater Draenic Stamina Flask (109160)
 		["default"] = 105617,
 		["name"] = L.raidbuffschecker_flask
 	},
 	-- http://www.wowhead.com/items=0.2
 	["Elixir"] = {
-		[105681] = "2250 AC",		-- Mantid Elixir (76075)  Guardian
-		[105682] = "750 CRIT",		-- Mad Hozen Elixir (76076)  Battle
-		[105683] = "750 EXP",		-- Elixir of Weaponry (76077)  Battle
-		[105684] = "750 HASTE",		-- Elixir of the Rapids (76078)  Battle
-		[105685] = "750 SPI",		-- Elixir of Peace (76079)  Battle
-		[105686] = "750 HIT",		-- Elixir of Perfection (76080)  Battle
-		[105687] = "750 DODGE",		-- Elixir of Mirrors (76081)  Guardian
-		[105688] = "750 MAST",		-- Monk's Elixir (76083)  Battle
+		[105681] = "256 ARMOR",		-- Mantid Elixir (76075)  Guardian
+		[105682] = "85 CRIT",		-- Mad Hozen Elixir (76076)  Battle
+		[105683] = "85 EXP",		-- Elixir of Weaponry (76077)  Battle
+		[105684] = "85 HASTE",		-- Elixir of the Rapids (76078)  Battle
+		[105685] = "85 SPI",		-- Elixir of Peace (76079)  Battle
+		[105686] = "85 HIT",		-- Elixir of Perfection (76080)  Battle
+		[105687] = "85 DODGE",		-- Elixir of Mirrors (76081)  Guardian
+		[105688] = "85 MAST",		-- Monk's Elixir (76083)  Battle
 		["default"] = 105681,
 		["name"] = L.raidbuffschecker_elixir
 	},
 	-- http://www.wowhead.com/items=0.5
 	["Food"] = {
-		-- TODO: Banquet:
-		--	Grill: 87226, 87228		STR 250+25
-		--	Wok: 87230, 87232		AGI 250+25
-		--	Brew: 87246, 87248		??? 250+25
-		--	Oven: 87242, 87244		STA 250+25
-		--	Steamer: 87238, 87240	SPI 250+25
-		--	Pot: 87234, 87236		INT 250+25
-		--	Pandaren: 74919, 75016	275 one stat
-		--	Chao Cookies: 88586		275 one state
-
-		[104272] = "300 STR",		-- Black Pepper Ribs and Shrimp (74646)
-		[104271] = "275 STR",		-- Eternal Blossom Fish (74645)
-		[104267] = "250 STR",		-- Charbroiled Tiger Steak (74642)
-
-		[104275] = "300 AGI",		-- Sea Mist Rice Noodles (74648)
-		[104274] = "275 AGI",		-- Valley Stir Fry (74647)
-		[104273] = "250 AGI",		-- Sauteed Carrots (74643)
-
-		[104277] = "300 INT",		-- Mogu Fish Stew (74650)
-		[104276] = "275 INT",		-- Braised Turtle (74649)
-		[104264] = "250 INT",		-- Swirling Mist Soup (74644)
-
-		[104280] = "300 SPI",		-- Steamed Crab Surprise (74653)
-		[104279] = "275 SPI",		 -- Fire Spirit Salmon (74652)
-		[104278] = "250 SPI",		-- Shrimp Dumplings (74651)
-
-		[104283] = "450 STA",		-- Chun Tian Spring Rolls (74656)
-		[104282] = "415 STA",		-- Twin Fish Platter (74655)
-		[104281] = "375 STA",		-- Wildfowl Roast (74654)
-
-		[124219] = "300 MAST",		-- Pearl Milk Tea (81414)
-		[124213] = "100 MAST",		-- Roasted Barley Tea (81406)
-		[131828] = "100 MAST",		-- Mah's Warm Yak-Tail Stew (90457)
-
-		[125113] = "300 HIT",		-- Spicy Salmon (86073)
-		[125106] = "275 HIT",		-- Wildfowl Ginseng Soup (86070)
-		[124221] = "200 HIT",		-- Skewered Peanut Chicken (81413)
-		[124215] = "100 HIT",		-- Boiled Silkworm Pupa (81405)
-
-		[125115] = "300 EXP",		-- Spicy Vegetable Chips (86074)
-		[125108] = "275 EXP",		-- Rice Pudding (86069)
-
-		[124220] = "200 DODGE",		-- Blanched Needle Mushrooms (81412)
-		[124214] = "100 DODGE",		-- Dried Needle Mushrooms (81404)
-
-		[125071] = "200 PARRY",		-- Peach Pie (81411)
-		[125070] = "100 PARRY",		-- Dried Peaches (81403)
-
-		[124218] = "200 CRIT",		-- Green Curry Fish (81410)
-		[124212] = "100 CRIT",		-- Toasted Fish Jerky (81402)
-
-		[124217] = "200 HASTE",		-- Tangy Yogurt (81409)
-		[124211] = "100 HASTE",		-- Yak Cheese Curds (81401)
-
-		[124216] = "200 EXP",		-- Red Bean Bun (81408)
-		[124210] = "100 EXP",		-- Pounded Rice Cake (81400)
+		-- Level 90
+		[146804] = "34 STR",		-- Fluffy Silkfeather Omelet (101750)
+		[104272] = "34 STR",		-- Black Pepper Ribs and Shrimp (74646)
+		[104271] = "31 STR",		-- Eternal Blossom Fish (74645)
+		[104267] = "28 STR",		-- Charbroiled Tiger Steak (74642)
+		
+		[146805] = "34 AGI",		-- Seasoned Pomfruit Slices (101746)
+		[104275] = "34 AGI",		-- Sea Mist Rice Noodles (74648)
+		[104274] = "31 AGI",		-- Valley Stir Fry (74647)
+		[104273] = "28 AGI",		-- Sauteed Carrots (74643)
+		
+		[146806] = "34 INT",		-- Spiced Blossom Soup (101748)
+		[104277] = "34 INT",		-- Mogu Fish Stew (74650)
+		[104276] = "31 INT",		-- Braised Turtle (74649)
+		[104264] = "28 INT",		-- Swirling Mist Soup (74644)
+		
+		[146807] = "34 SPI",		-- Farmer's Delight (101747)
+		[104280] = "34 SPI",		-- Steamed Crab Surprise (74653)
+		[104279] = "31 SPI",		-- Fire Spirit Salmon (74652)
+		[104278] = "28 SPI",		-- Shrimp Dumplings (74651)
+		
+		[104283] = "51 STA",		-- Chun Tian Spring Rolls (74656)
+		[146808] = "51 STA",		-- Stuffed Lushrooms (101749)
+		[104282] = "47 STA",		-- Twin Fish Platter (74655)
+		[104281] = "43 STA",		-- Wildfowl Roast (74654)
+		[111840] = "36 STA",		-- Half a Lovely Apple (79320)
+		
+		[124219] = "34 MAST",		-- Pearl Milk Tea (81414)
+		[146809] = "34 MAST",		-- Mango Ice (101745)
+		[124219] = "23 MAST",		-- Hot Papaya Milk (105721)
+		[124219] = "23 MAST",		-- Dented Can of Kaja'Cola (98127)
+		[124219] = "23 MAST",		-- Grilled Dinosaur Haunch (94535)
+		[124213] = "11 MAST",		-- Roasted Barley Tea (81406)
+		[131828] = "11 MAST",		-- Mah's Warm Yak-Tail Stew (90457)
+		
+		[125113] = "34 HIT",		-- Spicy Salmon (86073)
+		[125106] = "31 HIT",		-- Wildfowl Ginseng Soup (86070)
+		[124221] = "23 HIT",		-- Peanut Pork Chops (105723)
+		[124221] = "23 HIT",		-- Skewered Peanut Chicken (81413)
+		[124221] = "23 HIT",		-- Mechanopeep Foie Gras (98126)
+		[124221] = "23 HIT",		-- Spicy Mushan Noodles (104342)
+		[124215] = "11 HIT",		-- Boiled Silkworm Pupa (81405)
+		
+		[125115] = "34 EXP",		-- Spicy Vegetable Chips (86074)
+		[125108] = "31 EXP",		-- Rice Pudding (86069)
+		[124216] = "23 EXP",		-- Red Bean Bun (81408)
+		[124210] = "11 EXP",		-- Pounded Rice Cake (81400)
+		
+		[124220] = "23 DODGE",		-- Blanched Needle Mushrooms (81412)
+		[124220] = "23 DODGE",		-- Shaved Zangar Truffles (98125)
+		[124220] = "23 DODGE",		-- Crazy Snake Noodles (104340)
+		[124220] = "23 DODGE",		-- Rice-Wine Mushrooms (105717)
+		[124214] = "11 DODGE",		-- Dried Needle Mushrooms (81404)
+		
+		[125071] = "23 PARRY",		-- Peach Pie (81411)
+		[125071] = "23 PARRY",		-- Candied Apple (105720)
+		[125071] = "23 PARRY",		-- Bloodberry Tart (98124)
+		[125071] = "23 PARRY",		-- Harmonious River Noodles (104339)
+		[125070] = "11 PARRY",		-- Dried Peaches (81403)
+		
+		[124218] = "23 CRIT",		-- Brew-Curried Whitefish (105719)
+		[124218] = "23 CRIT",		-- Green Curry Fish (81410)
+		[124218] = "23 CRIT",		-- Lucky Mushroom Noodles (104344)
+		[124218] = "23 CRIT",		-- Whale Shark Caviar (98123)
+		[124212] = "11 CRIT",		-- Toasted Fish Jerky (81402)
+		
+		[124217] = "23 HASTE",		-- Steaming Goat Noodles (104341)
+		[124217] = "23 HASTE",		-- Camembert du Clefthoof (98122)
+		[124216] = "23 HASTE",		-- Nutty Brew-Bun (105722)
+		[124217] = "23 HASTE",		-- Tangy Yogurt (81409)
+		[124216] = "23 HASTE",		-- Golden Dragon Noodles (104343)
+		[124217] = "23 HASTE",		-- Fried Cheese Dumplings (105724)
+		[124211] = "11 HASTE",		-- Yak Cheese Curds (81401)
+		
+		--[104958] = "31 STAT",		-- Pandaren Banquet (74919)
+		--[105193] = "31 STAT",		-- Great Pandaren Banquet (75016)
+		--[126492] = "28 STAT",		-- Banquet of the Grill (87226)
+		--[126494] = "28 STAT",		-- Great Banquet of the Grill (87228)
+		--[126495] = "28 STAT",		-- Banquet of the Wok (87230)
+		--[126496] = "28 STAT",		-- Great Banquet of the Wok (87232)
+		--[126497] = "28 STAT",		-- Banquet of the Pot (87234)
+		--[126498] = "28 STAT",		-- Great Banquet of the Pot (87236)
+		--[126499] = "28 STAT",		-- Banquet of the Steamer (87238)
+		--[126500] = "28 STAT",		-- Great Banquet of the Steamer (87240)
+		--[126501] = "28 STAT",		-- Banquet of the Oven (87242)
+		--[126502] = "28 STAT",		-- Great Banquet of the Oven (87244)
+		--[126503] = "28 STAT",		-- Banquet of the Brew (87246)
+		--[126504] = "28 STAT",		-- Great Banquet of the Brew (87248)
+		--[145166] = "28 STAT",		-- Noodle Cart Kit (101630)
+		--[145169] = "31 STAT",		-- Deluxe Noodle Cart Kit (101661)
+		--[127882] = "31 STAT",		-- Squirmy Delight (88388)
+		
+		-- Level 100
+		[174077] = "75 MAST",		-- Perfect Fuzzy Pear (118274)
+		[160897] = "75 MAST",		-- Sleeper Surprise (111452)
+		[160793] = "50 MAST",		-- Fuzzy Pear (118268)
+		[160793] = "50 MAST",		-- Braised Riverbeast (111436)
+		[160793] = "50 MAST",		-- Fat Sleeper Cakes (111444)
+		
+		[160893] = "75 HASTE",		-- Frosty Stew (111450)
+		[174079] = "75 HASTE",		-- Perfect O'ruk Orange (118273)
+		[160726] = "50 HASTE",		-- Pan-Seared Talbuk (111434)
+		[160726] = "50 HASTE",		-- O'ruk Orange (118270)
+		[160726] = "50 HASTE",		-- Sturgeon Stew (111442)
+		
+		[160883] = "112 STA",		-- Talador Surf and Turf (111447)
+		[160600] = "75 STA",		-- Hearty Elekk Steak (111431)
+		[160600] = "75 STA",		-- Steamed Scorpion (111439)
+		
+		[160889] = "75 CRIT",		-- Blackrock Barbecue (111449)
+		[174062] = "75 CRIT",		-- Perfect Nagrand Cherry (118275)
+		[160724] = "50 CRIT",		-- Blackrock Ham (111433)
+		[160724] = "50 CRIT",		-- Giant Nagrand Cherry (118272)
+		[160724] = "50 CRIT",		-- Grilled Gulper (111441)
+		
+		[160900] = "75 MULTI",		-- Calamari Crepes (111453)
+		[174080] = "75 MULTI",		-- Perfect Greenskin Apple (118276)
+		[160832] = "50 MULTI",		-- Greenskin Apple (118269)
+		[160832] = "50 MULTI",		-- Rylak Crepes (111437)
+		[160832] = "50 MULTI",		-- Fiery Calamari (111445)
+		
+		[160902] = "75 VERS",		-- Gorgrond Chowder (111454)
+		[177931] = "75 VERS",		-- Pre-Mixed Pot of Noodles (120168)
+		[174078] = "75 VERS",		-- Perfect Ironpeel Plantain (118277)
+		[160839] = "50 VERS",		-- Ironpeel Plantain (118271)
+		[160839] = "50 VERS",		-- Clefthoof Sausages (111438)
+		[160839] = "50 VERS",		-- Skulker Chowder (111446)		
+		
+		--[174551] = "50 STAT",		-- Fish Roe (118416)
+		--[174707] = "75 STAT",		-- Legion Chili (118428)
+		--[175215] = "100 STAT",	-- Savage Feast (118576)
+		--[160740] = "50 STAT",		-- Feast of Blood (111457)
+		--[160914] = "50 STAT",		-- Feast of the Waters (111458)
+		--[178398] = "75 STAT",		-- Lukewarm Yak Roast Broth (120293)
 
 		["default"] = 104283,
 		["name"] = "Food&Drinks"
 	},
 }
---[[
-Buffs
-=====
-Attack Power:
- Warrior - Battle Shout
- Hunter - Trueshot Aura
- Death Knight - Horn of Winter
-
-Crit Chance:
- Mage - Arcane Brilliance
- Druid(Feral, Guardian) - Leader of the Pack
- Hunter - Furious Howl
- Mage - Dalaran Brilliance
- Hunter - Terrifying Roar
- Monk(Windwalker) - Legacy of the White Tiger
- Hunter - Still Water
-
-Mastery:
- Paladin - Blessing of Might
- Hunter - Roar of Courage
- Hunter - Spirit Beast Blessing
- Shaman - Grace of Air
-
-Melee/Ranged Attack Speed:
- Shaman(Enhancement) - Unleashed Rage
- Death Knight(Frost, Unholy) - Unholy Aura
- Rogue - Swiftblade"s Cunning
- Hunter - Cackling Howl
- Hunter - Serpent"s Swiftness
-
-Spell Haste:
- Druid(Balance) - Moonkin Form
- Priest(Shadow) - Shadowform
- Shaman(Elemental) - Elemental Oath
-
-Spellpower:
- Mage - Arcane Brilliance
- Mage - Dalaran Brilliance
- Shaman - Burning Wrath
- Warlock - Dark Intent
- Hunter - Still Water
-
-Stamina:
- Warrior - Commanding Shout
- Warlock-PET - Blood Pact
- Priest - Power Word: Fortitude
- Hunter - Qiraji Fortitude
-
-Stats:
- Druid - Mark of the Wild
- Paladin - Blessing of Kings
- Hunter - Embrace of the Shale Spider
- Monk - Legacy of the Emperor
- 
-Raid-Haste-Cooldown:
- Mage - Time Warp
- Shaman - Bloodlust
-
-Debuffs
-=======
-Magic Vulnerability:
- Rogue - Master Poisoner
- Warlock - Curse of the Elements
-
-Mortal Wounds:
- Hunter - Widow Venom
- Rogue - Wound Poison
- Warrior(Arms) - Mortal Strike
- Warrior(Fury) - Wild Strike
- Warlock(Pet) - Mortal Cleave / Legion Strike
-
-Physical Vulnerability:
- Death Knight(Frost) - Brittle Bones
- Death Knight(Unholy) - Ebon Plaguebringer
- Paladin(Retribution) - Judgments of the Bold
- Warrior(Arms,Fury) - Colossus Smash
-
-Slowed Casting Speed:
- Death Knight - Necrotic Strike
- Mage(Arcane) - Slow
- Rogue - Mind-Numbing Poison
- Warlock - Curse of Enfeeblement
-
-Weakened Armor:
- Druid - Faerie Fire
- Rogue - Expose Armor
- Warrior - Sunder Armor
-
-Weakened Blows:
- Death Knight(Blood) - Scarlet Fever
- Druid(Feral,Guardian) - Thrash
- Monk(Brewmaster) - Keg Smash
- Paladin(Prot,Ret) - Hammer of the Righteous
- Warrior - Thunder Clap
---]]
-
---[[
-TOOLS
-=====
-
-Combat Res:
- Death Knight - Raise Ally
- Druid - Rebirth
- Warlock - Soulstone
-
-Buff Removal:
- Hunter - Tranquilizing Shot
- Mage - Spellsteal
- Priest - Dispel Magic
- Shaman - Purge
- Warlock-PET - Devour Magic
- Warrior(Protection) - Glyph of Shield Slam
- Death Knight(Glyph) - Glyph of Icy Touch
-
-Curse Removal:
- Druid(Restoration) - Nature"s Cure
- Mage - Remove Curse
- Shaman - Cleanse Spirit
-
-Enrage Removal:
- Druid - Soothe
- Hunter - Tranquilizing Shot
- Rogue - Shiv
-Disease Removal:
- Monk - Detox
- Paladin - Cleanse
- Priest(Discipline,Holy) Purify
-
-Magic Removal:
- Druid(Restoration) - Nature"s Cure
- Monk(Mistweaver) - Detox
- Paladin(Holy) - Cleanse
- Priest(Discipline,Holy) - Purify
- Shaman(Restoration) - Purify Spirit
-
-Poison Removal:
- Druid(Restoration) - Nature"s Cure
- Monk - Detox
- Paladin - Cleanse
- --]]
---[[
-local T, C, L = unpack(Tukui)
-
-T.RaidBuffs = {
-	special = {
-		-- 80398 -- Dark Intent
-	},
-	flask = {
-		-- 94160, --"Flask of Flowing Water"
-		-- 79469, --"Flask of Steelskin"
-		-- 79470, --"Flask of the Draconic Mind"
-		-- 79471, --"Flask of the Winds
-		-- 79472, --"Flask of Titanic Strength"
-		-- 79638, --"Flask of Enhancement-STR"
-		-- 79639, --"Flask of Enhancement-AGI"
-		-- 79640, --"Flask of Enhancement-INT"
-		-- 92679, --Flask of battle
-	},
-	battleElixir = {
-		-- --Scrolls
-		-- 89343, --Agility
-		-- 63308, --Armor 
-		-- 89347, --Int
-		-- 89342, --Spirit
-		-- 63306, --Stam
-		-- 89346, --Strength
-
-		-- --Elixirs
-		-- 79481, --Hit
-		-- 79632, --Haste
-		-- 79477, --Crit
-		-- 79635, --Mastery
-		-- 79474, --Expertise
-		-- 79468, --Spirit
-	},
-	guardianElixir = {
-		-- 79480, --Armor
-		-- 79631, --Resistance+90
-	},
-	food = {
-		-- 87545, --90 STR
-		-- 87546, --90 AGI
-		-- 87547, --90 INT
-		-- 87548, --90 SPI
-		-- 87549, --90 MAST
-		-- 87550, --90 HIT
-		-- 87551, --90 CRIT
-		-- 87552, --90 HASTE
-		-- 87554, --90 DODGE
-		-- 87555, --90 PARRY
-		-- 87635, --90 EXP
-		-- 87556, --60 STR
-		-- 87557, --60 AGI
-		-- 87558, --60 INT
-		-- 87559, --60 SPI
-		-- 87560, --60 MAST
-		-- 87561, --60 HIT
-		-- 87562, --60 CRIT
-		-- 87563, --60 HASTE
-		-- 87564, --60 DODGE
-		-- 87634, --60 EXP
-		-- 87554, --Seafood Feast
-	},
-	casterOnly = {
-		spell3 = { --Total Stats
-			-- 1126, -- Mark of the Wild
-			-- 69378, -- Drums of Forgotten Kings
-			-- 90363, -- Embrace of the Shale Spider
-			-- 20217, -- Greater Blessing of Kings
-		},
-		spell4 = { --Total Stamina
-			-- 469, -- Commanding
-			-- 6307, -- Blood Pact
-			-- 90364, -- Qiraji Fortitude
-			-- 72590, -- Drums of fortitude
-			-- 21562, -- Power Word: Fortitude
-		},
-		spell5 = { --Total Mana
-			-- 61316, -- Dalaran Brilliance
-			-- 54424, -- Fel Intelligence
-			-- 1459, -- Arcane Brilliance
-		},
-		spell6 = { --Mana Regen
-			-- 19740, -- Blessing of Might
-			-- 54424, -- Fel Intelligence
-			-- 5675, -- Mana Spring Totem
-		}
-	},
-	nonCaster = {
-		spell3 = { --Total Stat
-			-- 1126, -- Mark of the Wild
-			-- 69378, -- Drums of Forgotten Kings
-			-- 90363, -- Embrace of the Shale Spider
-			-- 20217, -- Greater Blessing of Kings
-		},
-		spell4 = { --Total Stamina
-			-- 469, -- Commanding
-			-- 6307, -- Blood Pact
-			-- 90364, -- Qiraji Fortitude
-			-- 72590, -- Drums of fortitude
-			-- 21562, -- Power Word: Fortitude
-		},
-		spell5 = { --Total Mana
-			-- 61316, -- Dalaran Brilliance
-			-- 1459, -- Arcane Brilliance
-		},
-		spell6 = { --Total AP
-			-- 19740, -- Blessing of Might placing it twice because i like the icon better :D code will stop after this one is read, we want this first 
-			-- 30808, -- Unleashed Rage 
-			-- 53138, -- Abom Might
-			-- 19506, -- Trushot
-			-- 19740, -- Blessing of Might
-		}
-	},
-	--
-	allBuffs = {
-		["melee10"] = {
-			-- 8512,						-- Windfury Totem
-			-- 55610,						-- Improved Icy Talons
-			-- 53290,						-- Hunting Party
-		},
-
-		["crit5"] = {
-			-- 17007,						-- Leader of the Pack
-			-- 51470,						-- Elemental Oath
-			-- 51701,						-- Honor Among Thieves
-			-- 29801,						-- Rampage
-		},
-
-		["ap10"] = {
-			-- 30808,						-- Unleashed Rage
-			-- 19506,						-- Trueshot Aura
-			-- 53138,						-- Abomination"s Might
-			-- 19740,						-- Blessing of Might
-		},
-
-		["spellhaste"] = {
-			-- 24907,						-- Moonkin Aura
-			-- 49868,						-- Mind Quickening
-			-- 3738,						-- Wrath of Air Totem
-		},
-
-		["sp10"] = {
-			-- 47236,						-- Demonic Pact
-			-- 77746,						-- Totemic Wrath
-		},
-
-		["sp6"] = {
-			-- 8227,						-- Flametongue Totem
-			-- 1459,						-- Arcane Brillance
-			-- 61316,						-- Dalaran Brilliance
-		},
-
-		["dmg3"] = {
-			-- 82930,						-- Arcane Tactics
-			-- 34460,						-- Ferocious Inspiration
-			-- 31876,						-- Communion
-		},
-
-		["base5"] = {
-			-- 1126,						-- Mark of the Wild
-			-- 20217,						-- Blessing of Kings
-		},
-
-		["str_agi"] = {
-			-- 8076,						-- Strength of earth
-			-- 57330,						-- Horn of Winter
-			-- 6673,						-- Battle Shout
-		},
-
-		["stam"] = {
-			-- 21562,						-- Power Word: Fortitude
-			-- 6307,						-- Blood Pact
-			-- 469,						-- Commanding Shout
-		},
-
-		["mana"] = {
-			-- 1459,						-- Arcane Brillance
-			-- 54424,						-- Fel Intelligence
-			-- 61316,						-- Dalaran Brilliance
-		},
-
-		["armor"] = {
-			-- 8072,						-- stoneskin
-			-- 465,						-- Devotion Aura
-		},
-
-		-- make this a check list
-		-- local resist = {
-			-- Ele Resist Totem	--fire, frost nature
-			-- Aspect of the wild	--nature
-			-- Resistance Aura		--fire, frost, shadow
-			-- Kings				-- All
-			-- Shadow Protection	-- Shadow, Stacks with kings
-			-- Mark				-- All
-		-- }
-
-		["pushback"] = {
-			-- 19746,						-- Conc aura
-			-- 87717,						-- Totem of Tranq
-		},
-
-		["mp5"] = {
-			-- 54424,						-- Fel
-			-- 5677,						-- Mana Spring
-			-- 19740,						-- Blessing of Might
-		},
-
-		--replenishment
-		-- local manaregen = {
-			-- Vampiric Touch
-			-- Enduring Winter
-			-- soul leach
-			-- Revitalize
-			-- Communion
-		-- }
-	}
-}
---]]

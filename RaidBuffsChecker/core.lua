@@ -12,7 +12,7 @@ local C = Engine.Config
 local UI = Engine.UI
 
 -- Settings
-local personalCount = 8 -- we're lucky CasterIndex and NonCasterIndex have the same size
+local personalCount = 11 -- we're lucky CasterIndex and NonCasterIndex have the same size
 local position = {"TOP", UIParent, "TOP", 0, -3}
 local buttonSpacing = 2
 local buttonSize = 20
@@ -31,22 +31,30 @@ local CasterIndex = {
 	[1] = C.RaidBuffs.Stats,
 	[2] = C.RaidBuffs.Stamina,
 	[3] = C.RaidBuffs.SpellPower,
-	[4] = C.RaidBuffs.SpellHaste,
+	[4] = C.RaidBuffs.Haste,
 	[5] = C.RaidBuffs.CriticalStrike,
 	[6] = C.RaidBuffs.Mastery,
-	[7] = C.RaidBuffs.Food,
-	[8] = C.RaidBuffs.Flask, -- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
+	[7] = C.RaidBuffs.Multistrike,
+	[8] = C.RaidBuffs.Versatility,
+	[9] = C.RaidBuffs.Food,
+	[10] = C.RaidBuffs.Flask,
+	[11] = C.RaidBuffs.BurstHaste,
+	-- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
 }
 
 local NonCasterIndex = {
 	[1] = C.RaidBuffs.Stats,
 	[2] = C.RaidBuffs.Stamina,
 	[3] = C.RaidBuffs.AttackPower,
-	[4] = C.RaidBuffs.AttackSpeed,
+	[4] = C.RaidBuffs.Haste,
 	[5] = C.RaidBuffs.CriticalStrike,
 	[6] = C.RaidBuffs.Mastery,
-	[7] = C.RaidBuffs.Food,
-	[8] = C.RaidBuffs.Flask, -- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
+	[7] = C.RaidBuffs.Multistrike,
+	[8] = C.RaidBuffs.Versatility,
+	[9] = C.RaidBuffs.Food,
+	[10] = C.RaidBuffs.Flask,
+	[11] = C.RaidBuffs.BurstHaste,
+	-- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
 }
 
 -- Raid bar
@@ -54,11 +62,12 @@ local RaidIndex = {
 	[1] = C.RaidBuffs.Stats,
 	[2] = C.RaidBuffs.Stamina,
 	[3] = C.RaidBuffs.AttackPower,
-	[4] = C.RaidBuffs.AttackSpeed,
+	[4] = C.RaidBuffs.Haste,
 	[5] = C.RaidBuffs.SpellPower,
-	[6] = C.RaidBuffs.SpellHaste,
-	[7] = C.RaidBuffs.CriticalStrike,
-	[8] = C.RaidBuffs.Mastery
+	[6] = C.RaidBuffs.CriticalStrike,
+	[7] = C.RaidBuffs.Mastery,
+	[8] = C.RaidBuffs.Multistrike,
+	[9] = C.RaidBuffs.Versatility,
 }
 
 -- http://www.wowinterface.com/forums/showthread.php?t=28868
@@ -217,10 +226,10 @@ local function CreateRaidBuffFrame(layout)
 	RaidBuff:SetClampedToScreen(true)
 	RaidBuff:SetTemplate()
 	if layout == "HORIZONTAL" then
-		RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
+		RaidBuff:Size(650, 325)--RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
 		RaidBuff:Point("TOP", PersonalBuff, "BOTTOM", 0, -1)
 	else
-		RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
+		RaidBuff:Size(650, 300)--RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
 		RaidBuff:Point("TOPLEFT", PersonalBuff, "TOPRIGHT", 1, 0)
 	end
 	RaidBuff:Hide()
@@ -273,7 +282,7 @@ local function CreateRaidBuffFrame(layout)
 		-- end
 		-- bigButton.text:SetFont(C.media.font, 16)
 		-- bigButton.text:SetText(spellList["name"])
-		bigButton.text = UI.SetFontString(bigButton, 16)
+		bigButton.text = UI.SetFontString(bigButton, 14)
 		if 1 == (i%2) then -- left
 			bigButton.text:SetPoint("TOPLEFT", bigButton, "TOPRIGHT", 3, -1)
 		else -- right
@@ -454,19 +463,19 @@ local function CreateToggleButton(layout)
 	end)
 end
 
------------------------------
--- Mover
------------------------------
-local function CreateMover(layout)
-	local text = L.raidbuffschecker_move
-	if layout == "VERTICAL" then
-		text = VerticalText(text)
-	end
-	local mover = UI.CreateMover(PersonalBuff:GetName().."_MOVER", PersonalBuff:GetWidth(), PersonalBuff:GetHeight(), position, text)
-	PersonalBuff:ClearAllPoints()
-	PersonalBuff:Point("TOPLEFT", mover, 0, 0)
-	return mover
-end
+-- -----------------------------
+-- -- Mover
+-- -----------------------------
+-- local function CreateMover(layout)
+	-- local text = L.raidbuffschecker_move
+	-- if layout == "VERTICAL" then
+		-- text = VerticalText(text)
+	-- end
+	-- local mover = UI.CreateMover(PersonalBuff:GetName().."_MOVER", PersonalBuff:GetWidth(), PersonalBuff:GetHeight(), position, text)
+	-- PersonalBuff:ClearAllPoints()
+	-- PersonalBuff:Point("TOPLEFT", mover, 0, 0)
+	-- return mover
+-- end
 
 ----------------------------
 -- Main frame
@@ -488,6 +497,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	CreateToggleButton(RaidBuffsChecker.Layout)
 	RaidBuffToggle:SetAlpha(0) -- hidden by default
 	ShowOnHover(true) -- Show on hover by default
-	-- Create mover
-	CreateMover(RaidBuffsChecker.Layout)
+	-- -- Create mover
+	-- CreateMover(RaidBuffsChecker.Layout)
 end)

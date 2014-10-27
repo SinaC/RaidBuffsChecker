@@ -6,8 +6,10 @@ if GetLocale() == "zhCN" then
 	L.raidbuffschecker_stamina = "耐力"
 	L.raidbuffschecker_attackpower = "攻击强度"
 	L.raidbuffschecker_spellpower = "法术强度"
-	L.raidbuffschecker_attackspeed = "物理急速"
-	L.raidbuffschecker_spellhaste = "法术急速"
+	--L.raidbuffschecker_attackspeed = "物理急速"
+	--L.raidbuffschecker_spellhaste = "法术急速"
+	-- TODO
+	-- L.raidbuffschecker_haste
 	L.raidbuffschecker_criticalstrike = "爆击"
 	L.raidbuffschecker_mastery = "精通"
 	L.raidbuffschecker_flask = "合剂"
