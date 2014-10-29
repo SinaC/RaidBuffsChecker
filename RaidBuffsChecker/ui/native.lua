@@ -197,7 +197,7 @@ end
 
 local AllowFrameMoving = {}
 UI.CreateMover = function(name, width, height, anchor, text)
-Engine.DebugPrint("UI.CreateMover")
+--Engine.DebugPrint("UI.CreateMover")
 	local mover = CreateFrame("Frame", name, UIParent)
 	mover:SetTemplate()
 	mover:SetBackdropBorderColor(1, 0, 0, 1)
@@ -214,8 +214,20 @@ Engine.DebugPrint("UI.CreateMover")
 	mover:Hide()
 
 	tinsert(AllowFrameMoving, mover)
-Engine.DebugPrint("UI.CreateMover: succeeded")
+--Engine.DebugPrint("UI.CreateMover: succeeded")
 	return mover
+end
+
+UI.RegisterMovable = function(frame)
+	local text = L.raidbuffschecker_move
+	local name = frame:GetName().."_MOVER"
+	local width = frame:GetWidth()
+	local height = frame:GetHeight()
+	local anchor = {"TOP", UIParent, "TOP", 0, -3}
+
+	local mover = UI.CreateMover(name, width, height, anchor, text)
+	frame:ClearAllPoints()
+	frame:Point("TOPLEFT", mover, 0, 0)
 end
 
 local enable = true

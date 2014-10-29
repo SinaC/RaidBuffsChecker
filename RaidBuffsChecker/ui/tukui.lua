@@ -91,10 +91,17 @@ UI.CreateMover = function(name, width, height, anchor, text)
 	return mover
 end
 
+UI.RegisterMovable = function(frame)
+	local movers = T["Movers"]
+	movers:RegisterFrame(frame)
+end
+
 UI.Move = function()
-	if SlashCmdList["MOVING"] then
-		SlashCmdList["MOVING"]()
-	end
+	local movers = T["Movers"]
+	movers:StartOrStopMoving()
+	-- if SlashCmdList["MOVING"] then
+		-- SlashCmdList["MOVING"]()
+	-- end
 	-- T.MoveUIElements()
 	-- if T.MoveUnitFrames then
 		-- T.MoveUnitFrames()

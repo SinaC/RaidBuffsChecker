@@ -480,7 +480,7 @@ end
 ----------------------------
 -- Main frame
 ----------------------------
-local frame = CreateFrame("Frame")
+local frame = CreateFrame("Frame", "RaidBuffsChecker")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, addon)
 	if ADDON_NAME ~= addon then return end
@@ -499,4 +499,5 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	ShowOnHover(true) -- Show on hover by default
 	-- -- Create mover
 	-- CreateMover(RaidBuffsChecker.Layout)
+	UI.RegisterMovable(PersonalBuff)
 end)

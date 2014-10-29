@@ -49,6 +49,18 @@ UI.CreateMover = function(name, width, height, anchor, text)
 	return E.CreatedMovers[name].mover -- we need the mover for multiple anchors
 end
 
+UI.RegisterMovable = function(frame)
+	local text = L.raidbuffschecker_move
+	local name = frame:GetName().."_MOVER"
+	local width = frame:GetWidth()
+	local height = frame:GetHeight()
+	local anchor = {"TOP", UIParent, "TOP", 0, -3}
+
+	local mover = UI.CreateMover(name, width, height, anchor, text)
+	frame:ClearAllPoints()
+	frame:Point("TOPLEFT", mover, 0, 0)
+end
+
 UI.Move = function()
 	E:ToggleConfigMode() -- Call MoveUI from ElvUI
 	return true
