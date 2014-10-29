@@ -3,7 +3,6 @@ local L = Engine.Locales
 local UI = Engine.UI
 
 UI.MyClass = nil
-UI.PetBattleHider = nil
 
 UI.SetFontString = function(parent, fontHeight, fontStyle)
 	assert(false, "MUST BE OVERRIDEN IN UI COMPATIBLITY")

@@ -52,7 +52,6 @@ Config.ClassRole = { -- Ripped from ElvUI
 }
 
 --
-UI.PetBattleHider = TukuiPetBattleHider
 UI.MyClass = T.MyClass
 
 UI.SetFontString = function(parent, fontHeight, fontStyle)

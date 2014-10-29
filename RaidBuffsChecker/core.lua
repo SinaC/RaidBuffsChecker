@@ -120,7 +120,8 @@ end)
 -- Personal buff checker
 -----------------------------
 local function CreatePersonalBuffFrame(layout)
-	PersonalBuff = CreateFrame("Frame", "RaidBuffsCheckerPersonalFrame", UI.PetBattleHider)
+	PersonalBuff = CreateFrame("Frame", "RaidBuffsCheckerPersonalFrame", UIParent)
+	RegisterStateDriver(PersonalBuff, "visibility", "[vehicleui][petbattle][overridebar] hide; show")
 	PersonalBuff:SetClampedToScreen(true)
 	PersonalBuff:SetTemplate()
 	if layout == "HORIZONTAL" then

@@ -19,7 +19,6 @@ petBattleHider:SetAllPoints(UIParent)
 RegisterStateDriver(petBattleHider, "visibility", "[petbattle] hide; show")
 
 --
-UI.PetBattleHider = petBattleHider
 UI.MyClass = E.myclass
 
 UI.SetFontString = function(parent, fontHeight, fontStyle)
