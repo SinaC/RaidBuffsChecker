@@ -17,6 +17,7 @@ C.RaidBuffs = {
 		[159988] = "HUNTER",		-- Dog - Bark of the Wild
 		[160017] = "HUNTER",		-- Gorilla - Blessing of Kongs
 		[160077] = "HUNTER",		-- Worm - Strength of the Earth
+		[160206] = "HUNTER",		-- Lone Wolf - Power of the Primates	
 		["default"] = 20217,
 		["name"] = L.raidbuffschecker_stats
 	},
@@ -28,6 +29,7 @@ C.RaidBuffs = {
 		[160003] = "HUNTER",		-- Rylak - Savage Vigor
 		[160014] = "HUNTER",		-- Goat - Sturdiness
 		[166928] = "WARLOCK",		-- Blood Pact
+		[160199] = "HUNTER",		-- Lone Wolf - Fortitude of the Bear
 		["default"] = 21562,
 		["name"] = L.raidbuffschecker_stamina
 	},
@@ -45,6 +47,7 @@ C.RaidBuffs = {
 		[109773] = "WARLOCK",		-- Dark Intent
 		[126309] = "HUNTER",		-- Waterstrider - Still Water
 		[128433] = "HUNTER",		-- Serpent - Serpent's Cunning
+		[160205] = "HUNTER",		-- Lone Wolf - Wisdom of the Serpent
 		["default"] = 1459,
 		["name"] = L.raidbuffschecker_spellpower
 	},
@@ -57,6 +60,7 @@ C.RaidBuffs = {
 		[113742] = "ROGUE",			-- Swiftblade's Cunning
 		[135678] = "HUNTER",		-- Sporebat - Energizing Spores
 		[160074] = "HUNTER",		-- Wasp - Speed of the Swarm
+		[160206] = "HUNTER",		-- Lone Wolf - Haste of the Hyena
 		["default"] = 55610,
 		["name"] = L.raidbuffschecker_haste
 	},
@@ -71,6 +75,7 @@ C.RaidBuffs = {
 		[126309] = "HUNTER",		-- Waterstrider - Still Water
 		[126373] = "HUNTER",		-- Quilen - Fearless Roar
 		[160052] = "HUNTER",		-- Raptor - Strength of the Pack
+		[160200] = "HUNTER",		-- Lone Wolf - Ferocity of the Raptor
 		["default"] = 116781,
 		["name"] = L.raidbuffschecker_criticalstrike
 	},
@@ -83,6 +88,7 @@ C.RaidBuffs = {
 		[155522] = "DEATHKNIGHT",	-- Power of the Grave
 		[160039] = "HUNTER",		-- Hydra - Keen Senses
 		[160073] = "HUNTER",		-- Tallstrider - Plainswalking
+		[160198] = "HUNTER",		-- Lone Wolf - Grace of the Cat
 		["default"] = 19740,
 		["name"] = L.raidbuffschecker_mastery
 	},
@@ -105,6 +111,7 @@ C.RaidBuffs = {
 		[109773] = "WARLOCK",		-- Dark Intent
 		[113742] = "ROGUE",			-- Swiftblade's Cunning
 		[166916] = "MONK",			-- Windflurry
+		[172968] = "HUNTER",		-- Lone Wolf -Quickness of the Dragonhawk
 		["default"] = 166916,
 		["name"] = L.raidbuffschecker_multistrike
 	},
@@ -120,6 +127,7 @@ C.RaidBuffs = {
 		[167187] = "PALADIN",		-- Sanctity Aura
 		[167188] = "WARRIOR",		-- Inspiring Presence
 		[173035] = "HUNTER",		-- Stag - Grace
+		[172967] = "HUNTER",		-- Lone Wolf - Versatility of the Ravager
 		["default"] = 167187,
 		["name"] = L.raidbuffschecker_versatility
 	},
