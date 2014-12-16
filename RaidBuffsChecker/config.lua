@@ -60,7 +60,7 @@ C.RaidBuffs = {
 		[113742] = "ROGUE",			-- Swiftblade's Cunning
 		[135678] = "HUNTER",		-- Sporebat - Energizing Spores
 		[160074] = "HUNTER",		-- Wasp - Speed of the Swarm
-		[160206] = "HUNTER",		-- Lone Wolf - Haste of the Hyena
+		[160203] = "HUNTER",		-- Lone Wolf - Haste of the Hyena
 		["default"] = 55610,
 		["name"] = L.raidbuffschecker_haste
 	},
