@@ -398,7 +398,7 @@ end
 local function ShowOnHover(activate)
 	if activate then
 		RaidBuffToggle:SetScript("OnEnter", function(self)
-			if C.NoToggleInCombat ~= true or not InCombatLockdown() then
+			if (RaidBuff:IsShown() or C.NoToggleInCombat ~= true or not InCombatLockdown() then -- display button if shown or not in combat
 				self:SetAlpha(1)
 			end
 		end)
@@ -446,20 +446,22 @@ local function CreateToggleButton(layout)
 			RaidBuff:SetScript("OnUpdate", nil)
 		else
 			-- Show raid buff and attach toggle to raid buff
-			RaidBuff:Show()
-			self:ClearAllPoints()
-			if layout == "HORIZONTAL" then
-				self:Point("BOTTOM", RaidBuff, "BOTTOM", 0, 5)
-				self.text:SetText(L.raidbuffschecker_minimizeall)
-			else
-				self:Point("RIGHT", RaidBuff, "RIGHT", 5, 0)
-				local vText = VerticalText(L.raidbuffschecker_minimizeall)
-				self.text:SetText(vText)
+			if C.NoToggleInCombat ~= true or not InCombatLockdown() then -- only if not in combat
+				RaidBuff:Show()
+				self:ClearAllPoints()
+				if layout == "HORIZONTAL" then
+					self:Point("BOTTOM", RaidBuff, "BOTTOM", 0, 5)
+					self.text:SetText(L.raidbuffschecker_minimizeall)
+				else
+					self:Point("RIGHT", RaidBuff, "RIGHT", 5, 0)
+					local vText = VerticalText(L.raidbuffschecker_minimizeall)
+					self.text:SetText(vText)
+				end
+				ShowOnHover(false)
+				RaidBuff.needUpdate = true
+				RaidBuff.lastUpdate = GetTime() - 10 -- force update
+				RaidBuff:SetScript("OnUpdate", RaidBuffUpdate)
 			end
-			ShowOnHover(false)
-			RaidBuff.needUpdate = true
-			RaidBuff.lastUpdate = GetTime() - 10 -- force update
-			RaidBuff:SetScript("OnUpdate", RaidBuffUpdate)
 		end
 	end)
 end
