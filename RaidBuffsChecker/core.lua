@@ -398,7 +398,7 @@ end
 local function ShowOnHover(activate)
 	if activate then
 		RaidBuffToggle:SetScript("OnEnter", function(self)
-			if (RaidBuff:IsShown() or C.NoToggleInCombat ~= true or not InCombatLockdown() then -- display button if shown or not in combat
+			if RaidBuff:IsShown() or C.NoToggleInCombat ~= true or not InCombatLockdown() then -- display button if shown or not in combat
 				self:SetAlpha(1)
 			end
 		end)
