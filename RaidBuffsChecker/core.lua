@@ -12,7 +12,7 @@ local C = Engine.Config
 local UI = Engine.UI
 
 -- Settings
-local personalCount = 11 -- we're lucky CasterIndex and NonCasterIndex have the same size
+local personalCount = 10 -- we're lucky CasterIndex and NonCasterIndex have the same size
 local position = {"TOP", UIParent, "TOP", 0, -3}
 local buttonSpacing = 2
 local buttonSize = 20
@@ -38,7 +38,7 @@ local CasterIndex = {
 	[8] = C.RaidBuffs.Versatility,
 	[9] = C.RaidBuffs.Food,
 	[10] = C.RaidBuffs.Flask,
-	[11] = C.RaidBuffs.BurstHaste,
+	--[11] = C.RaidBuffs.BurstHaste,
 	-- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
 }
 
@@ -53,7 +53,7 @@ local NonCasterIndex = {
 	[8] = C.RaidBuffs.Versatility,
 	[9] = C.RaidBuffs.Food,
 	[10] = C.RaidBuffs.Flask,
-	[11] = C.RaidBuffs.BurstHaste,
+	--[11] = C.RaidBuffs.BurstHaste,
 	-- TODO: [8] = { [1] = { list = C.RaidBuffs.Flask, count = 1 }, [2] { list = C.RaidBuffs.Elixir, count = 2} }
 }
 
@@ -489,7 +489,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if ADDON_NAME ~= addon then return end
 	frame:UnregisterEvent("ADDON_LOADED")
 	-- Greetings
-	print(string.format(L.raidbuffschecker_help_use, SLASH_RAIDBUFFSCHECKER1, SLASH_RAIDBUFFSCHECKER2))
+	local version = GetAddOnMetadata(ADDON_NAME, "version") -- get current addon version
+	print(string.format(L.raidbuffschecker_help_use, SLASH_RAIDBUFFSCHECKER1, SLASH_RAIDBUFFSCHECKER2, version))
 	-- Saved variables defaulting
 	RaidBuffsChecker = RaidBuffsChecker or {}
 	RaidBuffsChecker.Layout = RaidBuffsChecker.Layout or "HORIZONTAL"

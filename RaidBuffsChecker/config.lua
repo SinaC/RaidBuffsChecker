@@ -92,15 +92,15 @@ C.RaidBuffs = {
 		["default"] = 19740,
 		["name"] = L.raidbuffschecker_mastery
 	},
-	["BurstHaste"] = {
-		[2825] = "SHAMAN",			-- Bloodlust
-		[32182] = "SHAMAN",			-- Heroism
-		[80353] = "MAGE",			-- Time Warp
-		[90355] = "HUNTER",			-- Ancient Hysteria
-		[160452] = "HUNTER",		-- Nether Ray - Netherwinds
-		["default"] = 80353,
-		["name"] = L.raidbuffschecker_bursthaste
-	},
+	-- ["BurstHaste"] = {
+		-- [2825] = "SHAMAN",			-- Bloodlust
+		-- [32182] = "SHAMAN",			-- Heroism
+		-- [80353] = "MAGE",			-- Time Warp
+		-- [90355] = "HUNTER",			-- Ancient Hysteria
+		-- [160452] = "HUNTER",		-- Nether Ray - Netherwinds
+		-- ["default"] = 80353,
+		-- ["name"] = L.raidbuffschecker_bursthaste
+	-- },
 	["Multistrike"] = {
 		[24844] = "HUNTER",			-- Wind Serpent - Breath of the Winds
 		[34889] = "HUNTER",			-- Dragonhawk - Spry Attacks
@@ -131,7 +131,7 @@ C.RaidBuffs = {
 		["default"] = 167187,
 		["name"] = L.raidbuffschecker_versatility
 	},
-	-- http://www.wowhead.com/items=0.3
+		-- http://www.wowhead.com/items=0.3
 	["Flask"] = {
 		-- Level 90
 		[105617] = "20 STAT",		-- Alchemist's Flask (75525) Agility, Strength, or Intellect
@@ -142,7 +142,7 @@ C.RaidBuffs = {
 		[105696] = "114 STR",		-- Flask of Winter's Bite (76088)
 		[127230] = "57 STAT",		-- Crystal of Insanity (86569)
 		-- Level 100
-		[109155] = "250 INT",		-- Greater Draenic Intellect Flask (109155)
+		[156079] = "250 INT",        -- Greater Draenic Intellect Flask (109155)
 		[156070] = "200 INT",		-- Draenic Intellect Flask (109147)
 		[156064] = "250 AGI",		-- Greater Draenic Agility Flask (109153)
 		[156071] = "200 STR",		-- Draenic Strength Flask (109148)
@@ -150,6 +150,7 @@ C.RaidBuffs = {
 		[156077] = "300 STA",		-- Draenic Stamina Flask (109152)
 		[156080] = "250 STR",		-- Greater Draenic Strength Flask (109156)
 		[156084] = "375 STA",		-- Greater Draenic Stamina Flask (109160)
+		[176151] = "200 STAT",      -- Crystal of Insanity (127230)
 		["default"] = 105617,
 		["name"] = L.raidbuffschecker_flask
 	},

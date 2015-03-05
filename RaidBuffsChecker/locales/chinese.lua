@@ -23,7 +23,7 @@ if GetLocale() == "zhCN" then
 	L.raidbuffschecker_minimizeall = "最小化显示团队Buff"
 	L.raidbuffschecker_move = "移动团队Buff"
 
-	L.raidbuffschecker_help_use = "使用%s或 %s命令来设置RaidBuffsChecker"
+	L.raidbuffschecker_help_use = "使用%s或 %s命令来设置RaidBuffsChecker%s"
 	L.raidbuffschecker_help_move = "%s move - 移动RaidBuffsChecker框体"
 	L.raidbuffschecker_command_stopmoving = "再次使用%s RaidBuffsChecker命令，退出移动模式"
 end
