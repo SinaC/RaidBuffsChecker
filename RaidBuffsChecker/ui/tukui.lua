@@ -108,25 +108,25 @@ UI.Move = function()
 	return true
 end
 
--- Multisampling test
-StaticPopupDialogs["RAIDBUFFCHECKER_MULTISAMPLE_PROBLEM"] = {
-	text = "Pixel perfect border cannot be guaranteed with multisampling activated. Click on accept to disable multisampling or cancel to continue.", -- TODO: locales
-	button1 = ACCEPT,
-	button2 = CANCEL,
-	OnAccept = function()
-		SetCVar("gxMultisample", 1)
-		RestartGx()
-	end,
-	OnCancel = function()
-		RaidBuffsChecker.MultisamplingChecked = true
-	end,
-	timeout = 0,
-	whileDead = 1,
-	hideOnEscape = false,
-}
+-- -- Multisampling test
+-- StaticPopupDialogs["RAIDBUFFCHECKER_MULTISAMPLE_PROBLEM"] = {
+	-- text = "Pixel perfect border cannot be guaranteed with multisampling activated. Click on accept to disable multisampling or cancel to continue.", -- TODO: locales
+	-- button1 = ACCEPT,
+	-- button2 = CANCEL,
+	-- OnAccept = function()
+		-- SetCVar("gxMultisample", 1)
+		-- RestartGx()
+	-- end,
+	-- OnCancel = function()
+		-- RaidBuffsChecker.MultisamplingChecked = true
+	-- end,
+	-- timeout = 0,
+	-- whileDead = 1,
+	-- hideOnEscape = false,
+-- }
 
-UI.PostInitialize = function()
-	if GetCVar("gxMultisample") ~= "1" and not RaidBuffsChecker.MultisamplingChecked then
-		StaticPopup_Show("RAIDBUFFCHECKER_MULTISAMPLE_PROBLEM")
-	end
-end
+-- UI.PostInitialize = function()
+	-- if GetCVar("gxMultisample") ~= "1" and not RaidBuffsChecker.MultisamplingChecked then
+		-- StaticPopup_Show("RAIDBUFFCHECKER_MULTISAMPLE_PROBLEM")
+	-- end
+-- end
