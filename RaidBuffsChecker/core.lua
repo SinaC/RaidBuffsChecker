@@ -504,4 +504,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	-- -- Create mover
 	-- CreateMover(RaidBuffsChecker.Layout)
 	UI.RegisterMovable(PersonalBuff)
+
+	if UI.PostInitialize ~= nil then
+		UI.PostInitialize()
+	end
 end)
