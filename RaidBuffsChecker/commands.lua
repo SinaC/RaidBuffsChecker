@@ -10,6 +10,7 @@ local function SlashHandlerShowHelp()
 	print(string.format(L.raidbuffschecker_help_use, SLASH_RAIDBUFFSCHECKER1, SLASH_RAIDBUFFSCHECKER2))
 	print(string.format(L.raidbuffschecker_help_move, SLASH_RAIDBUFFSCHECKER1))
 	print(string.format(L.raidbuffschecker_help_layout, SLASH_RAIDBUFFSCHECKER1))
+	print(string.format(L.L.raidbuffschecker_help_zoom, SLASH_RAIDBUFFSCHECKER1))
 end
 
 local function SlashHandlerMove(args)
@@ -25,6 +26,11 @@ local function SlashHandlerLayout(args)
 	ReloadUI()
 end
 
+local function SlashHandlerZoom(args)
+	RaidBuffsChecker.Zoom = (RaidBuffsChecker.Zoom ~= true) and true or false
+	ReloadUI()
+end
+
 SlashCmdList["RAIDBUFFSCHECKER"] = function(cmd)
 	local switch = cmd:match("([^ ]+)")
 	local args = cmd:match("[^ ]+ (.+)")
@@ -32,6 +38,8 @@ SlashCmdList["RAIDBUFFSCHECKER"] = function(cmd)
 		SlashHandlerMove(args)
 	elseif switch == "layout" then
 		SlashHandlerLayout(args)
+	elseif switch == "zoom" then
+		SlashHandlerZoom(args)
 	elseif switch == "debug" then
 		RaidBuffsChecker.DebugMode = (RaidBuffsChecker.DebugMode ~= true) and true or false
 	else

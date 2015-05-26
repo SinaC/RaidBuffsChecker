@@ -15,7 +15,7 @@ local UI = Engine.UI
 local personalCount = 10 -- we're lucky CasterIndex and NonCasterIndex have the same size
 local position = {"TOP", UIParent, "TOP", 0, -3}
 local buttonSpacing = 2
-local buttonSize = 20
+local buttonSize = 20 -- will be recomputed if zoom is activated
 local frameSize = (buttonSize * personalCount) + (buttonSpacing * (personalCount+1)) -- spacing - button - spacing - button - ... - button - spacing
 local smallButtonSize = 20
 local bigButtonSize = smallButtonSize * 2
@@ -131,6 +131,16 @@ local function CreatePersonalBuffFrame(layout)
 	end
 	PersonalBuff:Point(unpack(position))
 	PersonalBuff:SetFrameLevel(Minimap:GetFrameLevel() + 2)
+	local function SetTooltip(self)
+		GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
+		GameTooltip:ClearLines()
+		if (self.isActive) then
+			GameTooltip:SetSpellByID(self.spellID)
+		else
+			GameTooltip:AddLine(self.categoryName)
+		end
+		GameTooltip:Show()
+	end
 	-- Create button frames
 	PersonalBuff.Buttons = {}
 	for i = 1, personalCount do
@@ -157,6 +167,10 @@ local function CreatePersonalBuffFrame(layout)
 		button.texture:Point("TOPLEFT", 2, -2)
 		button.texture:Point("BOTTOMRIGHT", -2, 2)
 
+		-- tooltip
+		button:SetScript("OnEnter", SetTooltip)
+		button:SetScript("OnLeave", GameTooltip_Hide)
+
 		tinsert(PersonalBuff.Buttons, button)
 	end
 
@@ -166,9 +180,13 @@ local function CreatePersonalBuffFrame(layout)
 		local current = GetTime()
 		if (self.needUpdate and current - self.lastUpdate > 1) or current - self.lastUpdate > 10 then -- no need to be hyper reactive + at least every 10 seconds (just in case we missed something)
 			for i = 1, personalCount do
+				local spellList = PersonalIndex[i]
 				local button = self.Buttons[i]
 				local index, spellName, icon, spellID = GetIcon("player", PersonalIndex[i])
+				button.spellID = spellID
+				button.categoryName = spellList["name"]
 				button.texture:SetTexture(icon)
+				button.isActive = index ~= 0
 				if 0 ~= index then
 					button.texture:SetAlpha(1.0)
 				else
@@ -227,10 +245,10 @@ local function CreateRaidBuffFrame(layout)
 	RaidBuff:SetClampedToScreen(true)
 	RaidBuff:SetTemplate()
 	if layout == "HORIZONTAL" then
-		RaidBuff:Size(650, 325)--RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
+		RaidBuff:Size(RaidBuffsChecker.Zoom and 800 or 650, RaidBuffsChecker.Zoom and 450 or 325)-- TODO: placeholder, real size will be computed later
 		RaidBuff:Point("TOP", PersonalBuff, "BOTTOM", 0, -1)
 	else
-		RaidBuff:Size(650, 300)--RaidBuff:Size(440, 250) -- TODO: placeholder, real size will be computed later
+		RaidBuff:Size(RaidBuffsChecker.Zoom and 800 or 650, RaidBuffsChecker.Zoom and 425 or 300) -- TODO: placeholder, real size will be computed later
 		RaidBuff:Point("TOPLEFT", PersonalBuff, "TOPRIGHT", 1, 0)
 	end
 	RaidBuff:Hide()
@@ -494,7 +512,13 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	-- Saved variables defaulting
 	RaidBuffsChecker = RaidBuffsChecker or {}
 	RaidBuffsChecker.Layout = RaidBuffsChecker.Layout or "HORIZONTAL"
+	RaidBuffsChecker.Zoom = (RaidBuffsChecker.Zoom ~= nil) and RaidBuffsChecker.Zoom or false
 	RaidBuffsChecker.DebugMode = (RaidBuffsChecker.DebugMode ~= nil) and RaidBuffsChecker.DebugMode or false
+	-- Recompute size
+	buttonSize = RaidBuffsChecker.Zoom and 30 or 20 -- will be recomputed if zoom is activated
+	frameSize = (buttonSize * personalCount) + (buttonSpacing * (personalCount+1)) -- spacing - button - spacing - button - ... - button - spacing
+	smallButtonSize = RaidBuffsChecker.Zoom and 30 or 20
+	bigButtonSize = smallButtonSize * 2
 	-- Create frames
 	CreatePersonalBuffFrame(RaidBuffsChecker.Layout)
 	CreateRaidBuffFrame(RaidBuffsChecker.Layout)

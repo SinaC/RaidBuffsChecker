@@ -1,5 +1,5 @@
 ## Interface: 60100
-## Version: 3.3.7
+## Version: 3.5
 ## Author: SinaC
 ## Credits: Elv, Tukz, Epicgrim, Puffina, Kabelknoter, Justify
 ## Title: |cFF148587Raid Buff|r Checker

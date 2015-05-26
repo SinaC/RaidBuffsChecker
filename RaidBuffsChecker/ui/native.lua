@@ -53,11 +53,11 @@ C.ClassRole = { -- Ripped from ElvUI
 -- Credits to Tukz
 local backdropcolor = { .1,.1,.1 }
 local bordercolor = { .6,.6,.6 }
-local blank = [[Interface\AddOns\ClassMonitor\medias\textures\blank]]
-local normTex = [[Interface\AddOns\ClassMonitor\medias\textures\normTex]]
-local glowTex = [[Interface\AddOns\ClassMonitor\medias\textures\glowTex]]
-local normalFont = [=[Interface\Addons\ClassMonitor\medias\fonts\normal_font.ttf]=]
-local ufFont = [=[Interface\Addons\ClassMonitor\medias\fonts\uf_font.ttf]=]
+local blank = [[Interface\AddOns\RaidBuffsChecker\medias\textures\blank]]
+local normTex = [[Interface\AddOns\RaidBuffsChecker\medias\textures\normTex]]
+local glowTex = [[Interface\AddOns\RaidBuffsChecker\medias\textures\glowTex]]
+local normalFont = [=[Interface\Addons\RaidBuffsChecker\medias\fonts\normal_font.ttf]=]
+local ufFont = [=[Interface\Addons\RaidBuffsChecker\medias\fonts\uf_font.ttf]=]
 
 local floor = math.floor
 local texture = blank
