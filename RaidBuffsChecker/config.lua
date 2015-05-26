@@ -68,6 +68,7 @@ C.RaidBuffs = {
 		[1459] = "MAGE",			-- Arcane Brilliance
 		[24932] = "DRUID",			-- Leader of the Pack
 		[24604] = "HUNTER",			-- Wolf - Furious Howl
+		[128997] = "HUNTER",        		-- Spirit Beast - Spirit Beast Blessing
 		[61316] = "MAGE",			-- Dalaran Brilliance
 		[90309] = "HUNTER",			-- Devilsaur - Terrifying Roar
 		[90363] = "HUNTER",			-- Shale Spider - Embrace of the Shale Spider
